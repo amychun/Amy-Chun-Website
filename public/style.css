@@ -7,8 +7,22 @@
 }
 
 @font-face {
-  font-family: 'Estedad';
-  src: url() format('woff2');
+  font-family: 'Estedad-light';
+  src: url('public/webfont/Estedad-Light.woff2') format('woff2');
+  font-weight: normal;
+  style:normal
+}
+@font-face {
+  font-family: 'Estedad-medium';
+  src: url('public/webfont/Estedad-Medium.woff2') format('woff2');
+  font-weight: normal;
+  style:normal
+}
+@font-face {
+  font-family: 'Estedad-semibold';
+  src: url('public/webfont/Estedad-SemiBold.woff2') format('woff2');
+  font-weight: normal;
+  style:normal
 }
 
 *{
@@ -53,14 +67,42 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items:center;
-  height: 50px;
+  height: 3rem;
   padding: 0 10px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.header_left {
+.header_left{
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items:left;
 }
+
+.header_left .logo {
+  margin-right:auto;
+  background-image: url(public/resources/ACLogo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 9rem;
+  height: 3rem;
+  background-size: contain;
+
+}
+.header_left .title {
+  font-family:'Estedad-light';
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  align-self: center;
+  margin-left: 1rem;
+  color: #989898;
+  font-size: 0.8rem;
+}
+
 .header a {
   color: black;
+}
+
+i {
+  font-size: 2rem;
 }

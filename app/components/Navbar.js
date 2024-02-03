@@ -6,10 +6,11 @@ const Navbar = () => {
   return (
     <div className="header">
       <div className="header_left">
-        <NavLink to="/">Amy Chun</NavLink>
+        <div className="logo"></div>
+        <div className="title">software engineer & graphic designer</div>
       </div>
       <div className="header_right">
-        <NavLink to="/candies">All Candies List</NavLink>
+        <i class="fa-brands fa-github"></i>
       </div>
     </div>
   );
