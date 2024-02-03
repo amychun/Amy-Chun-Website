@@ -94,8 +94,6 @@ main {
 .header_right {
   display: flex;
   justify-content: center;
-  position: fixed;
-  right: 0;
 }
 
 .header_right .socialLinks a i{
@@ -118,11 +116,98 @@ main {
   align-self: center;
 }
 
-.header_right .switchMode {
+label {
+  margin-right: 1rem;
   width: 4rem;
-  border: thin solid black;
+  height: 1.7rem;
+  position: relative;
+  display: block;
+  background: #62AEC5;
+  border-radius: 85px;
+  box-shadow: inset 0px 2px 5px rgba(11,102,152,1), inset 0px -2px 5px rgba(98,174,197,1);
+  cursor:pointer;
+  transition: 0.3s;
 }
-.header_right .switchMode a i{
-  font-size: 1.2em;
-  align-self: center;
+
+label:after {
+  content: "";
+  width: 2rem;
+  height: 1.6rem;
+  position:absolute;
+  top: 0.5px;
+  left:1px;
+  background: linear-gradient(180deg, #E2e2e2, #d4d4d4);
+  border-radius: 78px;
+  /* box-shadow: 0px 1px 2px rgba(0,0,0,0.2); */
+  transition: 0.3s;
+
+}
+
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input:checked + label {
+  background: #E1A7B9;
+  box-shadow: inset 0px 2px 5px rgba(195,112,160,1);
+}
+
+input:checked + label:after {
+  left: 3.9rem;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #E2e2e2, #d4d4d4)
+}
+
+label:active:after {
+  width: 2.3rem;
+}
+
+.switchModeBKG {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: -1;
+  position: absolute;
+  transition: 0.3s;
+}
+
+input:checked + label + .switchModeBKG {
+  background:#242424;
+}
+
+label i {
+  position: absolute;
+  width: 40px;
+  top: 4px;
+  z-index: 100;
+}
+
+label i.codeIcon {
+  left:7px;
+  top: 5px;
+  color:#3c3c3c;
+  transition:0.3s;
+}
+
+label i.penIcon {
+  left: 2.45rem;
+  top: 6px;
+  color: #727272;
+  transition: 0.3s;
+  transition-delay: 1s;
+  display: none;
+}
+
+input:checked + label i.codeIcon {
+  transition: 0.3s;
+  transition-delay: 2s;
+  display: none;
+}
+
+input:checked + label i.penIcon {
+  color: #3c3c3c;
+  transition: 0.3s;
+  display: block;
 }

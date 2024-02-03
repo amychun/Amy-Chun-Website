@@ -10,10 +10,15 @@ const Navbar = () => {
         <div className="title">software engineer & graphic designer</div>
       </div>
       <div className="header_right">
-        <div className="switchMode">
-          <a href=""><i className="fa-solid fa-code"></i></a>
-          <a href=""><i className="fa-solid fa-pen-nib"></i></a>
-        </div>
+        <input type="checkbox" className="switchMode" id="switchMode"/>
+        <label htmlFor="switchMode">
+          <i className="fa-solid fa-code codeIcon"></i>
+          <i className="fa-solid fa-pen-nib penIcon"></i>
+          </label>
+
+        {/*The window that toggles from web mode to design mode*/}
+        <div className="switchModeBKG"></div>
+
         <div className="socialLinks">
           <a href=""><i className="fa-solid fa-envelope"></i></a>
           <a href=""><i className="fa-brands fa-github"></i></a>
