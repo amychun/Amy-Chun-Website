@@ -28,6 +28,7 @@
 *{
   padding:0;
   margin:0;
+  box-sizing: border-box;
 }
 
 html {
@@ -46,15 +47,6 @@ html {
   width:100%;
   height:100%;
 }
-
-/* nav {
-  align-items: center;
-  background-color: #333333;
-  color: #c0c0c0;
-  display: flex;
-  height: 80px;
-  padding: 10px;
-} */
 
 main {
   align-items: center;
@@ -99,10 +91,38 @@ main {
   font-size: 0.8rem;
 }
 
-.header a {
-  color: black;
+.header_right {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 0;
 }
 
-i {
-  font-size: 2rem;
+.header_right .socialLinks a i{
+  width: 30px;
+  color: #3c3c3c;
+  font-size: 1.4rem;
+  padding: 0 0.4rem;
+  margin: 0 0.4rem;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
+}
+
+.header_right .socialLinks a:hover i {
+  transform: scale(1.2);
+  padding: 0 0.4rem;
+  color: #333;
+  align-self: center;
+}
+
+.header_right .switchMode {
+  width: 4rem;
+  border: thin solid black;
+}
+.header_right .switchMode a i{
+  font-size: 1.2em;
+  align-self: center;
 }

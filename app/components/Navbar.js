@@ -10,7 +10,15 @@ const Navbar = () => {
         <div className="title">software engineer & graphic designer</div>
       </div>
       <div className="header_right">
-        <i class="fa-brands fa-github"></i>
+        <div className="switchMode">
+          <a href=""><i className="fa-solid fa-code"></i></a>
+          <a href=""><i className="fa-solid fa-pen-nib"></i></a>
+        </div>
+        <div className="socialLinks">
+          <a href=""><i className="fa-solid fa-envelope"></i></a>
+          <a href=""><i className="fa-brands fa-github"></i></a>
+          <a href=""><i className="fa-brands fa-linkedin"></i></a>
+        </div>
       </div>
     </div>
   );
