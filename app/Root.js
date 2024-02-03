@@ -8,8 +8,8 @@ import SingleCandy from "./components/SingleCandy";
 const Root = () => {
   return (
     <div>
-      <Main />
       <Navbar />
+      <Main />
       <Routes>
         <Route path="/*"></Route>
         <Route path="/candies" element={<Candies />}></Route>

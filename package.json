@@ -1,7 +1,7 @@
 {
-  "name": "goodie-bag",
+  "name": "amychun",
   "version": "0.0.1",
-  "description": "A review time project",
+  "description": "Personal website",
   "main": "main.js",
   "scripts": {
     "start:dev": "npm run build-watch & npm run start-server",
@@ -22,6 +22,7 @@
     "chalk": "^2.4.1",
     "express": "^4.14.0",
     "nodemon": "^2.0.4",
+    "path": "^0.12.7",
     "pg": "^8.3.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -36,6 +37,7 @@
     "babel-loader": "^8.2.5",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
+    "reload": "^3.2.1",
     "volleyball": "^1.5.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
