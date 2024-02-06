@@ -1,59 +1,57 @@
 @font-face {
-  font-family: 'cascadia_coderegular';
-  src: url('public/webfont/cascadia-webfont.woff2') format('woff2'),
-       url('public/webfont/cascadia-webfont.woff') format('woff');
+  font-family: "cascadia_coderegular";
+  src: url("public/webfont/cascadia-webfont.woff2") format("woff2"),
+    url("public/webfont/cascadia-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Estedad-light';
-  src: url('public/webfont/Estedad-Light.woff2') format('woff2');
+  font-family: "Estedad-light";
+  src: url("public/webfont/Estedad-Light.woff2") format("woff2");
   font-weight: normal;
-  style:normal
+  style: normal;
 }
 @font-face {
-  font-family: 'Estedad-medium';
-  src: url('public/webfont/Estedad-Medium.woff2') format('woff2');
+  font-family: "Estedad-medium";
+  src: url("public/webfont/Estedad-Medium.woff2") format("woff2");
   font-weight: normal;
-  style:normal
+  style: normal;
 }
 @font-face {
-  font-family: 'Estedad-semibold';
-  src: url('public/webfont/Estedad-SemiBold.woff2') format('woff2');
+  font-family: "Estedad-semibold";
+  src: url("public/webfont/Estedad-SemiBold.woff2") format("woff2");
   font-weight: normal;
-  style:normal
+  style: normal;
 }
 
-*{
-  padding:0;
-  margin:0;
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 html {
   box-sizing: border-box;
   font-family: arial, sans-serif;
-  background-color:hsla(0,0%,100%,1);
-  background-image:
-  radial-gradient(at 52% 7%, hsla(254,79%,90%,1) 0px, transparent 50%),
-  radial-gradient(at 96% 1%, hsla(4,93%,89%,1) 0px, transparent 50%),
-  radial-gradient(at 2% 36%, hsla(355,100%,93%,1) 0px, transparent 50%),
-  radial-gradient(at 0% 99%, hsla(310,43%,65%,1) 0px, transparent 50%),
-  radial-gradient(at 100% 100%, hsla(201,47%,77%,1) 0px, transparent 50%),
-  radial-gradient(at 73% 5%, hsla(343,100%,76%,1) 0px, transparent 50%);
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 52% 7%,
+      hsla(254, 79%, 90%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 96% 1%, hsla(4, 93%, 89%, 1) 0px, transparent 50%),
+    radial-gradient(at 2% 36%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 99%, hsla(310, 43%, 65%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(201, 47%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 73% 5%, hsla(343, 100%, 76%, 1) 0px, transparent 50%);
   background-size: cover;
-  background-repeat:no-repeat;
-  width:100%;
-  height:100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
-main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/********DESKTOP*********/
 
 /****************************************/
 /************HEADER SECTION**************/
@@ -62,31 +60,33 @@ main {
 .header {
   display: flex;
   justify-content: flex-end;
-  align-items:center;
+  align-items: center;
   height: 3rem;
   padding: 0 10px;
   background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.header_left{
+.header_left {
   margin-right: auto;
   display: flex;
   justify-content: center;
-  align-items:left;
+  align-items: left;
 }
 
 .header_left .logo {
-  margin-right:auto;
+  margin-right: auto;
   background-image: url(public/resources/ACLogo.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 9rem;
   height: 3rem;
   background-size: contain;
-
 }
 .header_left .title {
-  font-family:'Estedad-light';
+  font-family: "Estedad-light";
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   align-self: center;
@@ -97,54 +97,52 @@ main {
 
 .header_right {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
-.header_right .socialLinks a i{
-  width: 30px;
+.header_right .socialLinks a i {
+  width: 20px;
   color: #3c3c3c;
   font-size: 1.4rem;
-  padding: 0 0.4rem;
-  margin: 0 0.4rem;
-  -o-transition:.2s;
-  -ms-transition:.2s;
-  -moz-transition:.2s;
-  -webkit-transition:.2s;
-  transition:.2s;
+  margin: 0 0.7rem;
+  transform: scale(1);
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .header_right .socialLinks a:hover i {
   transform: scale(1.2);
-  padding: 0 0.4rem;
   color: #333;
-  align-self: center;
 }
 
 label {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   width: 3.5rem;
-  height: 1.7rem;
+  height: 1.4rem;
   position: relative;
   display: block;
-  background: #62AEC5;
+  background: #62aec5;
   border-radius: 1.7rem;
-  box-shadow: inset 0px 1px 4px rgba(11,102,152,0.5), inset 0px -1px 4px rgba(98,174,197,1);
-  cursor:pointer;
+  box-shadow: inset 0px 1px 4px rgba(11, 102, 152, 0.5),
+    inset 0px -1px 4px rgba(98, 174, 197, 1);
+  cursor: pointer;
   transition: 0.3s;
 }
 
 label:after {
   content: "";
   width: 2rem;
-  height: 1.63rem;
-  position:absolute;
+  height: 1.3rem;
+  position: absolute;
   top: 0.5px;
-  left:0.5px;
-  background: linear-gradient(180deg, #E2e2e2, #c4c4c4);
+  left: 0.5px;
+  background: linear-gradient(180deg, #e2e2e2, #c4c4c4);
   border-radius: 78px;
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-
 }
 
 input {
@@ -154,14 +152,14 @@ input {
 }
 
 input:checked + label {
-  background: #E1A7B9;
+  background: #e1a7b9;
   box-shadow: inset 0px 1px 3px rgba(220, 123, 179, 0.7);
 }
 
 input:checked + label:after {
   left: 3.45rem;
   transform: translateX(-100%);
-  background: linear-gradient(180deg, #E2e2e2, #d4d4d4)
+  background: linear-gradient(180deg, #e2e2e2, #d4d4d4);
 }
 
 label:active:after {
@@ -169,31 +167,31 @@ label:active:after {
 }
 
 .softwareEngineerTitle {
-  color: rgba(11,102,152,1);
+  color: rgba(11, 102, 152, 1);
 }
 
 .graphicDesignTitle {
-  color: rgba(195,112,160,1);
+  color: rgba(195, 112, 160, 1);
 }
 
 label i {
   position: absolute;
-  color:#3c3c3c;
+  color: #3c3c3c;
   width: 40px;
-  top: 4px;
+  top: 1px;
   z-index: 100;
 }
 
 label i.codeIcon {
-  left:7px;
-  top: 5px;
-  transition:0.3s;
+  left: 6px;
+  top: 3px;
+  transition: 0.3s;
   display: block;
 }
 
 label i.penIcon {
   left: 2rem;
-  top: 6px;
+  top: 3px;
   display: none;
   transition: 1s;
 }
@@ -207,4 +205,23 @@ input:checked + label i.codeIcon {
 input:checked + label i.penIcon {
   display: block;
   transition: 1s;
+}
+
+/****************************************/
+/**************MAIN**SECTION*************/
+/****************************************/
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding-top: 4rem;
+}
+
+.container {
+  width: 80vw;
+  height: 80vh;
+  box-shadow: 2px 2px 5px rgba(52, 52, 52, 0.5);
+  border-radius: 4px;
 }
