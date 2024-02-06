@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className="header">
       <div className="header_left">
         <div className="logo"></div>
-        <div className="title">software engineer & graphic designer</div>
+        <div className="title"><span className="softwareEngineerTitle">software engineer</span> & <span className="graphicDesignTitle">graphic designer</span></div>
       </div>
       <div className="header_right">
         <input type="checkbox" className="switchMode" id="switchMode"/>
