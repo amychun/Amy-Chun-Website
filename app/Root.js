@@ -1,6 +1,6 @@
 import React from "react";
 import Candies from "./components/Candies";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
 import SingleCandy from "./components/SingleCandy";
@@ -8,7 +8,7 @@ import SingleCandy from "./components/SingleCandy";
 const Root = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Main />
       <Routes>
         <Route path="/*"></Route>

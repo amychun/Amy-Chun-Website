@@ -25,6 +25,11 @@
   style: normal;
 }
 
+h3,
+h5 {
+  font-family: "Estedad-light";
+  color: #bbb;
+}
 * {
   padding: 0;
   margin: 0;
@@ -210,18 +215,118 @@ input:checked + label i.penIcon {
 /****************************************/
 /**************MAIN**SECTION*************/
 /****************************************/
+h1 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h5 {
+  text-align: right;
+  padding-right: 10px;
+  color: #5a5a5a;
+}
 
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-  padding-top: 4rem;
+  height: 80vh;
+  padding-top: 8rem;
 }
 
 .container {
-  width: 80vw;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 17% auto;
+  grid-gap: 0px;
+  width: 90vw;
   height: 80vh;
   box-shadow: 2px 2px 5px rgba(52, 52, 52, 0.5);
-  border-radius: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+}
+
+.project_view {
+  display: grid;
+  grid-template-rows: fit-content(10px) auto fit-content(10px);
+  border: thin solid black;
+}
+
+NavLink {
+  text-decoration: none;
+}
+
+.side_nav {
+  background-color: #474747;
+}
+
+.top_windowbar {
+  background-color: #272727;
+}
+.top_windowbar_tab {
+  padding: 3px 20px;
+  background-color: #343434;
+  width: 170px;
+  text-align: center;
+}
+
+.title-folder {
+  font-size: 1.1rem;
+  padding-right: 7px;
+  color: #bbb;
+}
+
+.three_dots {
+  background-color: #ffc107;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.two_column_view {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 20px;
+  background-color: #343434;
+  height: auto;
+  width: auto;
+}
+
+.numbers {
+  font-family: "cascadia_coderegular";
+  padding-top: 10px;
+  width: 1.5rem;
+  line-height: 1.8em;
+  text-align: center;
+  color: #5a5a5a;
+}
+
+.project_content {
+  font-family: "cascadia_coderegular";
+  letter-spacing: 0.1em;
+  color: #d0d0d0;
+  padding-top: 10px;
+}
+
+.project_content i {
+  padding-left: 10px;
+  font-size: 0.8em;
+}
+.project_content h4 {
+  padding: 7px 0;
+  color: #3d644f;
+}
+
+.project_content p {
+  line-height: 1.6em;
+}
+
+.bottom_windowbar {
+  background-color: #272727;
 }
