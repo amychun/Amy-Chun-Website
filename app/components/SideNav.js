@@ -4,8 +4,10 @@ import { NavLink } from "react-router-dom";
 const SideNav = () => {
   return (
     <div className="side_nav">
-      <span className="three_dots"></span>
-      <span className="sw_title">Software Engineer</span>
+      <div className="dots_title">
+        <div className="three_dots"></div>
+        <div className="sw_title">Software Engineer</div>
+      </div>
 
       <ul className="nav_links">
         <li>
@@ -16,27 +18,30 @@ const SideNav = () => {
 
         <li>
           <NavLink>
+            <i class="fa-solid fa-chevron-right"></i>
             <i className="fa-solid fa-folder"></i>Intellego
           </NavLink>
         </li>
         <li>
           <NavLink>
+            <i class="fa-solid fa-chevron-right"></i>
             <i className="fa-solid fa-folder"></i>Video Chat
           </NavLink>
         </li>
         <li>
           <NavLink>
+            <i class="fa-solid fa-chevron-down"></i>
             <i className="fa-regular fa-folder-open"></i>UrgeM5
-          </NavLink>
-        </li>
-        <li>
-          <NavLink>
-            <i className="fa-brands fa-square-github"></i>Github
-            <i className="fa-solid fa-up-right-from-square"></i>
           </NavLink>
         </li>
 
         <ul className="nav_sub_links">
+          <li>
+            <NavLink>
+              <i className="fa-brands fa-square-github"></i>Github
+              <i className="fa-solid fa-up-right-from-square new_window_icon"></i>
+            </NavLink>
+          </li>
           <li>
             <NavLink>
               <i className="fa-brands fa-react"></i>React.js
