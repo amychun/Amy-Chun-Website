@@ -6,10 +6,7 @@ module.exports = {
     filename: "./public/bundle.js",
   },
   context: __dirname,
-  devtool: "source-map",
-  devServer: {
-    static: "./dist",
-  },
+  devtool: "eval-source-map",
   target: "web",
   module: {
     rules: [
@@ -20,7 +17,4 @@ module.exports = {
       },
     ],
   },
-  // optimization: {
-  //   runtimeChunk: "single",
-  // },
 };
