@@ -18,19 +18,19 @@ const SideNav = () => {
 
         <li>
           <NavLink>
-            <i class="fa-solid fa-chevron-right"></i>
+            <i className="fa-solid fa-chevron-right"></i>
             <i className="fa-solid fa-folder"></i>Intellego
           </NavLink>
         </li>
         <li>
           <NavLink>
-            <i class="fa-solid fa-chevron-right"></i>
+            <i className="fa-solid fa-chevron-right"></i>
             <i className="fa-solid fa-folder"></i>Video Chat
           </NavLink>
         </li>
         <li>
           <NavLink>
-            <i class="fa-solid fa-chevron-down"></i>
+            <i className="fa-solid fa-chevron-down"></i>
             <i className="fa-regular fa-folder-open"></i>UrgeM5
           </NavLink>
         </li>

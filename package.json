@@ -4,9 +4,10 @@
   "description": "Personal website",
   "main": "main.js",
   "scripts": {
-    "start:dev": "npm run build-watch & npm run start-server",
+    "start:dev": "npm run build-watch & npm run start-server & npm run dev",
     "start-server": "nodemon --watch server main.js -e html,js,css",
     "build-watch": "webpack -w",
+    "dev": "webpack serve --open --config webpack.config.js",
     "start": "echo 'Running server for production - developers, use npm run start:dev for development' && node main"
   },
   "keywords": [
@@ -43,6 +44,6 @@
     "volleyball": "^1.5.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0"
+    "webpack-dev-server": "^4.15.1"
   }
 }

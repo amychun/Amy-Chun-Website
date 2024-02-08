@@ -7,6 +7,10 @@ module.exports = {
   },
   context: __dirname,
   devtool: "source-map",
+  devServer: {
+    static: "./dist",
+  },
+  target: "web",
   module: {
     rules: [
       {
@@ -16,4 +20,7 @@ module.exports = {
       },
     ],
   },
+  // optimization: {
+  //   runtimeChunk: "single",
+  // },
 };
