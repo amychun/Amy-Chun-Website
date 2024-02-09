@@ -7,7 +7,8 @@
     "start:dev": "npm run build-watch & npm run start-server",
     "start-server": "nodemon --watch server main.js -e html,js,css",
     "build-watch": "webpack -w",
-    "start": "echo 'Running server for production - developers, use npm run start:dev for development' && node main"
+    "start": "echo 'Running server for production - developers, use npm run start:dev for development' && node main",
+    "seed": "node seed.js"
   },
   "keywords": [
     "react",
@@ -33,16 +34,16 @@
     "sequelize": "^6.36.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-react": "^7.17.12",
-    "babel-loader": "^8.2.5",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
     "reload": "^3.2.1",
     "volleyball": "^1.5.1",
     "webpack": "^5.90.1",
-    "webpack-cli": "^4.10.0",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   }
 }

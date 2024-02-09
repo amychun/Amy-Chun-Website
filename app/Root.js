@@ -1,8 +1,9 @@
 import React from "react";
-import Candies from "./components/Candies";
-import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
+
+import Candies from "./components/Candies";
 import Main from "./components/Main";
+import Header from "./components/Header";
 import SingleCandy from "./components/SingleCandy";
 
 const Root = () => {
