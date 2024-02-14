@@ -1,7 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Outlet, NavLink } from "react-router-dom";
 
 const SideNav = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
     <div className="side_nav">
       <div className="dots_title">
@@ -11,7 +13,11 @@ const SideNav = () => {
 
       <ul className="nav_links">
         <li>
-          <NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? "active" : "";
+            }}
+          >
             <i className="fa-solid fa-sitemap"></i>Projects
           </NavLink>
         </li>
@@ -64,6 +70,7 @@ const SideNav = () => {
           </li>
         </ul>
       </ul>
+      <Outlet />
     </div>
   );
 };

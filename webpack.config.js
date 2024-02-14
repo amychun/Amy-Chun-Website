@@ -6,7 +6,7 @@ module.exports = {
     filename: "bundle.js",
   },
   context: __dirname,
-  devtool: "source-map",
+  devtool: "inline-source-map",
   devServer: {
     static: {
       directory: __dirname + "/public",
