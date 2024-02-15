@@ -10,7 +10,7 @@ const Item = styled(Paper)(({ theme }) => ({
   // textAlign: "left",
 }));
 
-const ProjectView = () => {
+const ProjectView = (projectView) => {
   return (
     <Grid item xs={12}>
       <Item className="project_view">

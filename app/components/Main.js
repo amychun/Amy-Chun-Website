@@ -10,54 +10,59 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import Collapse from "@mui/material/Collapse";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import FolderIcon from "@mui/icons-material/Folder";
 import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import JavascriptIcon from "@mui/icons-material/Javascript";
 import ViewQuiltIcon from "@mui/icons-material/ViewQuilt";
 import LayersIcon from "@mui/icons-material/Layers";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 
-//FILES
+// PROJECTS VIEW
 import ProjectView from "./ProjectView";
+import Intellego from "./Intellego";
+import { VideoChat } from "@mui/icons-material";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
-  // ...theme.typography.body2,
-  // padding: theme.spacing(1),
-  // textAlign: "center",
-  // color: theme.palette.text.secondary,
 }));
 
 const Main = () => {
   //STATES:
-  // open-close nested nav
-  const [open, setOpen] = React.useState(false);
+  const [expanded, setExpanded] = React.useState("Intellego");
+  const [projectView, setProjectView] = React.useState("Intellego");
 
-  // const handleClick = () => {
-  //   setOpen(!open);
-  // };
-
-  const [expanded, setExpanded] = React.useState("panel1");
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
-
-  const handleClick = (panel) => (event, newExpanded) => {
+  //EVENTS:
+  const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
-    setOpen(!open);
-    setSelectedIndex(expanded);
-  };
+    setProjectView(projectView);
+    console.log(`Clicked on ${panel}`);
+    project(panel);
 
-  // selected={selectedIndex === 1}
-  // onClick={(event) => handleListItemClick(event, 1)}
+    //PROJECTS:
+    function project(panel) {
+      switch (projectView) {
+        case "Intellego":
+          <Intellego />;
+          console.log("Intellego Project");
+        case "VideoChat":
+          console.log("Video Chat");
+        // case "three": return <ComponentC />;
+        // case "four":  return <ComponentD />;
+
+        default:
+          return <h1>No project match</h1>;
+      }
+    }
+  };
 
   return (
     <Container className="main">
@@ -88,28 +93,36 @@ const Main = () => {
                   </ListSubheader>
                 }
               >
-                {/* INTELLEGO NAV */}
-                <ListItemButton
-                  onClick={handleClick("panel1")}
-                  expanded={expanded === "panel1"}
-                  sx={{ bgcolor: "#4b8768" }}
+                <Accordion
+                  className="accordion"
+                  disableGutters
+                  expanded={expanded === "Intellego"}
+                  onChange={handleChange("Intellego")}
+                  sx={{ bgcolor: "transparent", color: "#d0d0d0" }}
                 >
-                  <ListItemIcon sx={{ color: "#eee" }}>
-                    {open ? <ExpandMoreIcon /> : <ChevronRightIcon />}
-                    {open ? <FolderOutlinedIcon /> : <FolderIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary="Intellego" />
-                </ListItemButton>
-
-                {/* INTELLEGO COLLAPSE */}
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <ListItem>
+                  <AccordionSummary
+                    aria-controls="panel1d-content"
+                    id="panel1d-header"
+                  >
+                    <ListItemIcon sx={{ color: "#eee" }}>
+                      {expanded === "Intellego" ? (
+                        <ExpandMoreIcon />
+                      ) : (
+                        <ChevronRightIcon />
+                      )}
+                      {expanded === "Intellego" ? (
+                        <FolderOpenIcon />
+                      ) : (
+                        <FolderOutlinedIcon />
+                      )}
+                    </ListItemIcon>
+                    <Typography>Intellego</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
                     <Stack
-                      direction="row"
-                      useFlexGap
-                      flexWrap="wrap"
+                      direction="column"
                       spacing={1}
-                      sx={{ pl: 1, maxWidth: 360 }}
+                      sx={{ maxWidth: 340, mx: 2 }}
                     >
                       <Chip
                         icon={<GitHubIcon />}
@@ -117,54 +130,63 @@ const Main = () => {
                         component="a"
                         href="https://github.com/Manananaam/Intellego"
                         target="_blank"
-                        sx={{ color: "#eee" }}
-                        variant="outlined"
+                        color="info"
                         clickable
                       />
                       <Chip
-                        icon={<JavascriptIcon />}
-                        label="React.js"
-                        variant="outlined"
+                        icon={<InsertEmoticonIcon />}
+                        label="React"
                         sx={{ color: "#909090" }}
+                        size="small"
                       />
                       <Chip
                         icon={<ViewQuiltIcon />}
                         label="Figma"
-                        variant="outlined"
                         sx={{ color: "#909090" }}
+                        size="small"
                       />
                       <Chip
                         icon={<LayersIcon />}
                         label="Webpack"
-                        variant="outlined"
                         sx={{ color: "#909090" }}
+                        size="small"
                       />
                     </Stack>
-                  </ListItem>
-                </Collapse>
+                  </AccordionDetails>
+                </Accordion>
 
-                {/* VIDEO-CHAT NAV */}
-                <ListItemButton
-                  onClick={handleClick("panel2")}
-                  expanded={expanded === "panel2"}
-                  sx={{ bgcolor: "#4b8768" }}
+                <Accordion
+                  disableGutters
+                  expanded={expanded === "VideoChat"}
+                  onChange={handleChange("VideoChat")}
+                  sx={{ bgcolor: "transparent", color: "#d0d0d0" }}
                 >
-                  <ListItemIcon sx={{ color: "#eee" }}>
-                    {open ? <ExpandMoreIcon /> : <ChevronRightIcon />}
-                    {open ? <FolderOutlinedIcon /> : <FolderIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary="Video Chat" />
-                </ListItemButton>
-
-                {/* INTELLEGO COLLAPSE */}
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <ListItem>
+                  <AccordionSummary
+                    aria-controls="panel2d-content"
+                    id="panel2d-header"
+                  >
+                    <ListItemIcon sx={{ color: "#eee" }}>
+                      {expanded === "VideoChat" ? (
+                        <ExpandMoreIcon />
+                      ) : (
+                        <ChevronRightIcon />
+                      )}
+                      {expanded === "VideoChat" ? (
+                        <FolderOpenIcon />
+                      ) : (
+                        <FolderOutlinedIcon />
+                      )}
+                    </ListItemIcon>
+                    <Typography>Video Chat</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
                     <Stack
-                      direction="row"
-                      useFlexGap
-                      flexWrap="wrap"
+                      direction="column"
+                      // useFlexGap
+                      // flexWrap="wrap"
+                      align="left"
                       spacing={1}
-                      sx={{ pl: 1, maxWidth: 360 }}
+                      sx={{ maxWidth: 340, mx: 2 }}
                     >
                       <Chip
                         icon={<GitHubIcon />}
@@ -172,36 +194,38 @@ const Main = () => {
                         component="a"
                         href="https://github.com/Manananaam/Intellego"
                         target="_blank"
-                        sx={{ color: "#eee" }}
-                        variant="outlined"
+                        color="info"
                         clickable
                       />
                       <Chip
-                        icon={<JavascriptIcon />}
-                        label="React.js"
-                        variant="outlined"
+                        icon={<InsertEmoticonIcon />}
+                        label="React"
+                        // variant="outlined"
                         sx={{ color: "#909090" }}
+                        // size="small"
                       />
                       <Chip
                         icon={<ViewQuiltIcon />}
                         label="Figma"
-                        variant="outlined"
+                        // variant="outlined"
                         sx={{ color: "#909090" }}
+                        // size="small"
                       />
                       <Chip
                         icon={<LayersIcon />}
                         label="Webpack"
-                        variant="outlined"
+                        // variant="outlined"
                         sx={{ color: "#909090" }}
+                        // size="small"
                       />
                     </Stack>
-                  </ListItem>
-                </Collapse>
+                  </AccordionDetails>
+                </Accordion>
               </List>
             </Item>
           </Grid>
 
-          <ProjectView />
+          <div onChange={handleChange(<Intellego />)}></div>
         </Grid>
       </Box>
     </Container>
