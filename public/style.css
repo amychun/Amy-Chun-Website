@@ -237,9 +237,10 @@ input:checked + label i.penIcon {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 75vh;
+  height: 75vh;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: auto;
+  scrollbar-color: #111111 #000;
   border: thin solid rgba(255, 255, 255, 0.1);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
@@ -249,6 +250,8 @@ input:checked + label i.penIcon {
   display: grid;
   min-height: 100%;
   grid-template-rows: fit-content(10px) auto fit-content(10px);
+  /* overflow-y: scroll !important;
+  scrollbar-color: #111111 #000; */
 }
 
 .top_windowbar {
@@ -323,6 +326,9 @@ input:checked + label i.penIcon {
   padding-left: 0;
   width: 100%;
 }
+.projectImage img {
+  width: 80%;
+}
 
 .ExtrenalLinkIcon {
   all: unset;
@@ -330,7 +336,9 @@ input:checked + label i.penIcon {
   font-size: 1.2em;
   margin-left: 0.2em;
 }
-
+ol {
+  margin-left: 2em;
+}
 /* SIDE NAVIGATION */
 .side_nav {
   background-color: rgba(0, 0, 0, 0.9);

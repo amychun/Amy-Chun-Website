@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import img1 from "../project/Intellego00.jpg";
+import img2 from "../project/Intellego01.jpg";
 
 const Intellego = ({ addindexprops }) => {
   return (
@@ -37,9 +39,8 @@ const Intellego = ({ addindexprops }) => {
             performance.
           </p>
           <div className="projectImage">
-            <img src="https://dummyimage.com/400x300" />
+            <img src={img2} />
           </div>
-
           <p>
             To begin, log in or sign up for an account. You will be taken to
             your dashboard, where you can view and create courses, view and
@@ -52,6 +53,36 @@ const Intellego = ({ addindexprops }) => {
             able to view and grade submissions. Assessments may also be assigned
             to other courses, or just edited if there are no submissions.
           </p>
+          <div className="projectImage">
+            <img src={img1} />
+          </div>
+          <br />
+          <h2>Setting up the project</h2>
+          <br />
+          <hr />
+          <br />
+          <ol>
+            <li>Create a PostgreSQL Database with the name 'intellego'</li>
+            <li> Clone the project main branch to your local computer</li>
+            <li>Add.env file to the root directory of the project folder</li>
+            <li>
+              Paste this content to the .env file: <br />
+              JWT_SECRET = manananaam JWT_EXPIRES = 30d API_KEY =
+              ZJ9bYyxzfyvashxGmMyCUdQs
+            </li>
+            <li>Run npm run seed to seed data to database</li>
+            <li>Run npm run start:dev to run the project</li>
+            <li>
+              In browser, go to url : localhost:8080 Log in with existing
+              account or sign up with new account email: kara@email.com
+              password: 123123
+            </li>
+            <li>
+              To view a submission form, visit this url :
+              localhost:3015/student/courses/114/assessments/105 verify student
+              ID with 100
+            </li>
+          </ol>
         </div>
       </div>
 
