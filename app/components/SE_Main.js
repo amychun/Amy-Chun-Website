@@ -1,6 +1,5 @@
 //REACT
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 //MUI
 import { styled } from "@mui/material/styles";
@@ -27,10 +26,10 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 
 // PROJECTS VIEW
-import ProjectView from "./ProjectView";
-import Intellego from "./Intellego";
-import { VideoChat } from "@mui/icons-material";
+import Project02 from "./SE_project02";
+import Intellego from "./SE_Intellego";
 
+//STYLES FOR MUI
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
 }));
@@ -38,30 +37,12 @@ const Item = styled(Paper)(({ theme }) => ({
 const Main = () => {
   //STATES:
   const [expanded, setExpanded] = React.useState("Intellego");
-  const [projectView, setProjectView] = React.useState("Intellego");
+  const [projectview, setProjectview] = React.useState("Intellego");
 
   //EVENTS:
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
-    setProjectView(projectView);
-    console.log(`Clicked on ${panel}`);
-    project(panel);
-
-    //PROJECTS:
-    function project(panel) {
-      switch (projectView) {
-        case "Intellego":
-          <Intellego />;
-          console.log("Intellego Project");
-        case "VideoChat":
-          console.log("Video Chat");
-        // case "three": return <ComponentC />;
-        // case "four":  return <ComponentD />;
-
-        default:
-          return <h1>No project match</h1>;
-      }
-    }
+    setProjectview(panel);
   };
 
   return (
@@ -69,7 +50,7 @@ const Main = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container columns={15} spacing={0} className="container">
           <Grid item xs={3} className="side_nav">
-            <Item>
+            <div>
               <div className="dots_title">
                 <div className="three_dots"></div>
                 <div className="sw_title">Software Engineer</div>
@@ -94,7 +75,6 @@ const Main = () => {
                 }
               >
                 <Accordion
-                  className="accordion"
                   disableGutters
                   expanded={expanded === "Intellego"}
                   onChange={handleChange("Intellego")}
@@ -182,8 +162,6 @@ const Main = () => {
                   <AccordionDetails>
                     <Stack
                       direction="column"
-                      // useFlexGap
-                      // flexWrap="wrap"
                       align="left"
                       spacing={1}
                       sx={{ maxWidth: 340, mx: 2 }}
@@ -200,32 +178,34 @@ const Main = () => {
                       <Chip
                         icon={<InsertEmoticonIcon />}
                         label="React"
-                        // variant="outlined"
                         sx={{ color: "#909090" }}
-                        // size="small"
                       />
                       <Chip
                         icon={<ViewQuiltIcon />}
                         label="Figma"
-                        // variant="outlined"
                         sx={{ color: "#909090" }}
-                        // size="small"
                       />
                       <Chip
                         icon={<LayersIcon />}
                         label="Webpack"
-                        // variant="outlined"
                         sx={{ color: "#909090" }}
-                        // size="small"
                       />
                     </Stack>
                   </AccordionDetails>
                 </Accordion>
               </List>
-            </Item>
+            </div>
           </Grid>
 
-          <div onChange={handleChange(<Intellego />)}></div>
+          <Grid item xs={12}>
+            {projectview && projectview === "Intellego" ? (
+              <Intellego />
+            ) : projectview === "VideoChat" ? (
+              <Project02 />
+            ) : (
+              <h1>Nothing to see here!</h1>
+            )}
+          </Grid>
         </Grid>
       </Box>
     </Container>
