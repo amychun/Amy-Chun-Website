@@ -1,9 +1,6 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 
-const ProjectView = (projectView) => {
+const ProjectView = ({ addindexprops }) => {
   return (
     <div className="project_view">
       {/* Window Topbar */}
@@ -20,7 +17,7 @@ const ProjectView = (projectView) => {
       {/* Project Content */}
       <div className="two_column_view">
         <div className="num_span">
-          <div className="numbers">1 2 3 4 5</div>
+          <div className="numbers">{addindexprops}</div>
         </div>
         <div className="project_content">
           <h1>

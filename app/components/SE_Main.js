@@ -1,10 +1,12 @@
 //REACT
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+// SOFTWARE ENGINEERING PROJECTS
+import Project02 from "./SE_project02";
+import Intellego from "./SE_Intellego";
 
 //MUI
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ListSubheader from "@mui/material/ListSubheader";
@@ -12,32 +14,25 @@ import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ViewQuiltIcon from "@mui/icons-material/ViewQuilt";
 import LayersIcon from "@mui/icons-material/Layers";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 
-// PROJECTS VIEW
-import Project02 from "./SE_project02";
-import Intellego from "./SE_Intellego";
-
-//STYLES FOR MUI
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
-}));
-
-const Main = () => {
+const Main = ({ addindexprops }) => {
   //STATES:
   const [expanded, setExpanded] = React.useState("Intellego");
   const [projectview, setProjectview] = React.useState("Intellego");
+  const [addindex, setAddindex] = useState(0);
 
   //EVENTS:
   const handleChange = (panel) => (event, newExpanded) => {
@@ -45,12 +40,26 @@ const Main = () => {
     setProjectview(panel);
   };
 
+  //adding numbers on the left of the project content according to the height of the project window. Passing this into a prop so that other projects can share them across projects.
+  useEffect(() => {
+    const contentHeight =
+      document.getElementsByClassName("project_content")[0].offsetHeight / 27;
+    setAddindex(contentHeight);
+  }, []);
+
+  const addIndex = (addindex) => {
+    let nums = [];
+    for (let i = 1; i < addindex; i++) {
+      nums.push(i + " ");
+    }
+    return nums;
+  };
   return (
     <Container className="main">
       <Box sx={{ flexGrow: 1 }}>
         <Grid container columns={15} spacing={0} className="container">
           <Grid item xs={3} className="side_nav">
-            <div>
+            <>
               <div className="dots_title">
                 <div className="three_dots"></div>
                 <div className="sw_title">Software Engineer</div>
@@ -112,6 +121,7 @@ const Main = () => {
                         target="_blank"
                         color="info"
                         clickable
+                        variant="elevated"
                       />
                       <Chip
                         icon={<InsertEmoticonIcon />}
@@ -194,14 +204,14 @@ const Main = () => {
                   </AccordionDetails>
                 </Accordion>
               </List>
-            </div>
+            </>
           </Grid>
 
           <Grid item xs={12}>
             {projectview && projectview === "Intellego" ? (
-              <Intellego />
+              <Intellego addindexprops={addIndex(addindex)} />
             ) : projectview === "VideoChat" ? (
-              <Project02 />
+              <Project02 addindexprops={addIndex(addindex)} />
             ) : (
               <h1>Nothing to see here!</h1>
             )}
