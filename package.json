@@ -28,6 +28,7 @@
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
     "@mui/styled-engine-sc": "^6.0.0-alpha.16",
+    "@react-email/link": "0.0.7",
     "@reduxjs/toolkit": "^2.1.0",
     "axios": "^1.6.7",
     "express": "^4.18.2",

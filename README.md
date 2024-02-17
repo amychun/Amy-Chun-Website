@@ -8,4 +8,8 @@
 
 ## Details
 
-This is a personal project website for myself using React.js.
+This is a personal project website is to show case my projects and work on React, Webpack, Tailwind, etc. to further expand my knowlege of coding.
+
+## Contact
+
+amyheeyong@gmail.com

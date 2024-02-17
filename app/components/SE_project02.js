@@ -10,7 +10,7 @@ const ProjectView = ({ addindexprops }) => {
             className="fa-regular fa-folder title-folder"
             style={{ display: "inline-block" }}
           ></i>
-          <h3 style={{ display: "inline-block" }}>UrgeM5</h3>
+          <h3 style={{ display: "inline-block" }}>Project Coming Up!</h3>
         </div>
       </div>
 
@@ -21,17 +21,28 @@ const ProjectView = ({ addindexprops }) => {
         </div>
         <div className="project_content">
           <h1>
-            UrgeM5<i className="fa-solid fa-up-right-from-square"></i>
+            Project Coming Up!
+            {/* <i className="fa-solid fa-up-right-from-square"></i> */}
           </h1>
-          <h4>// Date 2023.01.30</h4>
+          <h4>// Date 2024.02.16</h4>
           <p>
-            Lorem ipsum dolor sit i vestibulum massa sit amet sagittis placerat.
-            Sed egestas porta diam, non suscipit neque aliquet eu. Maecenas eu
-            nisl varius, egestas libero ac, tempus metus.
+            Another project is in the brewing procees! ☕️ it's coming up pretty
+            soon! This website was create to showcase not only software engineer
+            parts but also design aspects of me. So, I'm intending to build
+            another "Desginer" toggle switch to showcase it! Here are some of
+            the things I'm currently working on!
           </p>
-          <div className="projectImage">
+          <br />
+          <ol>
+            <li>Adding a 'Designer' tab(toggle) to the website</li>
+            <li>Making it responsive!</li>
+            <li>Work on a Video-Chat project</li>
+            <li>Work on a Music sorting project (database)</li>
+          </ol>
+
+          {/* <div className="projectImage">
             <img src="https://dummyimage.com/400x300" />
-          </div>
+          </div> */}
         </div>
       </div>
 

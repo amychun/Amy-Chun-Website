@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 
 // SOFTWARE ENGINEERING PROJECTS
-import Project02 from "./SE_project02";
 import Intellego from "./SE_Intellego";
+import Project02 from "./SE_project02";
 
 //MUI
 import Box from "@mui/material/Box";
@@ -147,8 +147,8 @@ const Main = ({ addindexprops }) => {
 
                 <Accordion
                   disableGutters
-                  expanded={expanded === "VideoChat"}
-                  onChange={handleChange("VideoChat")}
+                  expanded={expanded === "Project02"}
+                  onChange={handleChange("Project02")}
                   sx={{ bgcolor: "transparent", color: "#d0d0d0" }}
                 >
                   <AccordionSummary
@@ -156,18 +156,18 @@ const Main = ({ addindexprops }) => {
                     id="panel2d-header"
                   >
                     <ListItemIcon sx={{ color: "#eee" }}>
-                      {expanded === "VideoChat" ? (
+                      {expanded === "Project02" ? (
                         <ExpandMoreIcon />
                       ) : (
                         <ChevronRightIcon />
                       )}
-                      {expanded === "VideoChat" ? (
+                      {expanded === "Project02" ? (
                         <FolderOpenIcon />
                       ) : (
                         <FolderOutlinedIcon />
                       )}
                     </ListItemIcon>
-                    <Typography>Video Chat</Typography>
+                    <Typography>More Projects</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Stack
@@ -180,7 +180,7 @@ const Main = ({ addindexprops }) => {
                         icon={<GitHubIcon />}
                         label="Github"
                         component="a"
-                        href="https://github.com/Manananaam/Intellego"
+                        href="https://github.com/amychun"
                         target="_blank"
                         color="info"
                         clickable
@@ -210,7 +210,7 @@ const Main = ({ addindexprops }) => {
           <Grid item xs={12}>
             {projectview && projectview === "Intellego" ? (
               <Intellego addindexprops={addIndex(addindex)} />
-            ) : projectview === "VideoChat" ? (
+            ) : projectview === "Project02" ? (
               <Project02 addindexprops={addIndex(addindex)} />
             ) : (
               <h1>Nothing to see here!</h1>

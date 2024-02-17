@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@react-email/link";
 
 const Header = () => {
   return (
@@ -11,20 +12,21 @@ const Header = () => {
         </div>
       </div>
       <div className="header_right">
-        <input type="checkbox" className="switchMode" id="switchMode" />
+        {/*Adding a switch mode for software engineer vs graphic design mode before the end of February!*/}
+        {/* <input type="checkbox" className="switchMode" id="switchMode" />
         <label htmlFor="switchMode">
           <i className="fa-solid fa-code codeIcon" />
           <i className="fa-solid fa-pen-nib penIcon" />
-        </label>
+        </label> */}
 
         <div className="socialLinks">
-          <a href="">
+          {/* <Link href={`mailto:amyheeyong@msn.com`}>
             <i className="fa-solid fa-envelope" />
-          </a>
-          <a href="">
+          </Link> */}
+          <a href="https://github.com/amychun" target="_blank">
             <i className="fa-brands fa-github" />
           </a>
-          <a href="">
+          <a href="https://linkedin.com/in/amyhchun" target="_blank">
             <i className="fa-brands fa-linkedin" />
           </a>
         </div>
