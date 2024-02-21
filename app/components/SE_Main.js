@@ -43,7 +43,7 @@ const Main = ({ addindexprops }) => {
   //adding numbers on the left of the project content according to the height of the project window. Passing this into a prop so that other projects can share them across projects.
   useEffect(() => {
     const contentHeight =
-      document.getElementsByClassName("project_content")[0].offsetHeight / 27;
+      document.getElementsByClassName("project_content")[0].offsetHeight / 24;
     setAddindex(contentHeight);
   }, []);
 
@@ -58,7 +58,7 @@ const Main = ({ addindexprops }) => {
     <Container className="main">
       <Box sx={{ flexGrow: 1 }}>
         <Grid container columns={15} spacing={0} className="container">
-          <Grid item xs={3} className="side_nav">
+          <Grid item xs={3} className="side_nav" position="sticky">
             <>
               <div className="dots_title">
                 <div className="three_dots"></div>
