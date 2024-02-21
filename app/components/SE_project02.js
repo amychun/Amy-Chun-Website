@@ -10,7 +10,7 @@ const ProjectView = ({ addindexprops }) => {
             className="fa-regular fa-folder title-folder"
             style={{ display: "inline-block" }}
           ></i>
-          <h3 style={{ display: "inline-block" }}>Project Coming Up!</h3>
+          <h3 style={{ display: "inline-block" }}>Projects Coming Up!</h3>
         </div>
       </div>
 

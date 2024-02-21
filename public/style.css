@@ -243,6 +243,7 @@ input:checked + label i.penIcon {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   max-height: 80vh;
   overflow: auto;
+  scrollbar-color: #1d1d1d #000;
 }
 
 /* PROJECT AREA */
