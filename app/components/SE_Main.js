@@ -38,14 +38,15 @@ const Main = ({ addindexprops }) => {
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
     setProjectview(panel);
+    setAddindex(0);
   };
 
   //adding numbers on the left of the project content according to the height of the project window. Passing this into a prop so that other projects can share them across projects.
   useEffect(() => {
     const contentHeight =
-      document.getElementsByClassName("project_content")[0].offsetHeight / 24;
+      document.getElementsByClassName("project_content")[0].offsetHeight / 23;
     setAddindex(contentHeight);
-  }, []);
+  }, [handleChange]);
 
   const addIndex = (addindex) => {
     let nums = [];
